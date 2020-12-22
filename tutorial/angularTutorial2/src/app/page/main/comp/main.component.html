@@ -1,0 +1,17 @@
+아이디 : <input type="text" [(ngModel)]="insertUsi.usiId" /> <br>
+비밀번호 : <input type="password" [(ngModel)]="insertUsi.usiPwd" /> <br>
+이름 : <input type="text" [(ngModel)]="insertUsi.usiName" /> <br>
+나이 : <input type="number" [(ngModel)]="insertUsi.usiAge" /> <br>
+주소 : <input type="text" [(ngModel)]="insertUsi.usiAddr" /> <br>
+<button (click)="insert()">제출</button>
+
+<div>
+    <ul>
+        <li *ngFor="let usi of storage.user_info; let i = index">
+            {{ usi.usiNum }}
+            <button (click)="select(usi.usiNum)">정보보기</button>
+            <button (click)="update(usi.usiNum)">수정</button>
+            <button (click)="delete(usi.usiNum)">삭제</button>
+        </li>
+    </ul>
+</div>
